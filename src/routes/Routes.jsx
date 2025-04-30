@@ -4,6 +4,7 @@ import App from "../App";
 import Home from "../pages/Home";
 import Coffees from "../pages/Coffees";
 import Dashboard from "../pages/Dashboard";
+import CoffeeCards from "../components/CoffeeCards";
 
 const routes = createBrowserRouter([
     {
@@ -12,7 +13,14 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch("./categories.json"),
+                children: [
+                    {
+                        path: "/category",
+                        element: <CoffeeCards></CoffeeCards>
+                    }
+                ]
             },
             {
                 path: '/coffees',
