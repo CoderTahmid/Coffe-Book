@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import nutritionImg from '../assets/nutrition.png'
+import { addFavorite } from '../utils';
 
 const CoffeeDetails = () => {
 
@@ -25,7 +26,7 @@ const CoffeeDetails = () => {
     } = coffee;
 
     const handleFavorite = (coffee) => {
-        
+        addFavorite(coffee);
     };
 
     return (
