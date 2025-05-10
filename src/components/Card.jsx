@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Card = ({ coffee }) => {
-
-    const {name, image, category, origin, type, id, rating, popularity} = coffee;
+    const { pathname } = useLocation();
+    const { name, image, category, origin, type, id, rating, popularity } = coffee;
 
     return (
         <div className="flex relative">
@@ -19,6 +19,9 @@ const Card = ({ coffee }) => {
                     <p>Popular: {popularity}</p>
                 </div>
             </Link>
+            {
+                pathname === "/dashboard" && <p className="absolute -top-5 -right-5">Delete</p>
+            }
         </div>
     );
 };
