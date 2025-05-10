@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { FaTrashAlt } from "react-icons/fa";
 
 const Card = ({ coffee }) => {
     const { pathname } = useLocation();
@@ -20,7 +21,7 @@ const Card = ({ coffee }) => {
                 </div>
             </Link>
             {
-                pathname === "/dashboard" && <p className="absolute -top-5 -right-5">Delete</p>
+                pathname === "/dashboard" && <div className="absolute -top-5 p-3 bg-warning rounded-full cursor-pointer -right-5"><FaTrashAlt size={20} /></div>
             }
         </div>
     );
