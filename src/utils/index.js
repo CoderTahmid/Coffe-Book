@@ -27,4 +27,4 @@ const addFavorite = (coffee) => {
 // remove coffee from local storage
 
     
-export { addFavorite };   
+export { addFavorite, getAllFavorites };   
